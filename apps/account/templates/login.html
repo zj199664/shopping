@@ -1,0 +1,108 @@
+<!--
+Author: xmoban.cn
+Author URL: http://www.xmoban.cn
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collective Forms Widget Flat Responsive Widget Template :: xmoban.cn</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Collective Forms Widget Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href='http：//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,300italic,600italic,700'
+          rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="main">
+    <!-- <h1>Collective Forms Widget</h1> -->
+    <div class="wthree_top_forms">
+        <!-- <div style="margin-left: 30%" class="agile-info_w3ls hvr-buzz-out">
+            <h3>Register</h3>
+            <div class="agile-info_w3ls_grid">
+                <form action="#" method="post">
+                    <input type="text" name="Name" placeholder="Name" required=" ">
+                    <input type="password" name="Password" placeholder="Password" required=" ">
+                    <input type="password" name="Password" placeholder="Confirm Password" required=" ">
+                    <input type="email" name="Email" placeholder="Email" required=" ">
+                    <div class="check">
+                        <label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i>i agree to the <span>terms of services</span></label>
+                    </div>
+                    <input type="submit" value="Sign Up">
+                </form>
+                <h5>Already a member? <a href="#">Sign In</a></h5>
+            </div>
+        </div> -->
+        <div style="margin-left: 30%" class="agile-info_w3ls agile-info_w3ls_sub hvr-buzz-out">
+            <h3>登录</h3>
+            <div class="agile-info_w3ls_grid second">
+                {% if msg %}
+                    <div class="form-group  w3 w3l">
+                        <div style="color: white" class="help-block with-errors">{{ msg }}</div>
+                    </div>
+                {% endif %}
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    {% if next %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                    {% endif %}
+                    <input type="text" name="username" placeholder="请输入4-16位用户名" required=" ">
+                    <input type="password" name="password" placeholder="密码包含大写，小写，数字和符号" required=" ">
+                    <div class="agile_remember">
+                        <div class="agile_remember_left">
+                            <div class="check">
+                                <!-- <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>remember me</label> -->
+                            </div>
+                        </div>
+                        <div class="agile_remember_right">
+                            <!-- <a href="#">Forgot Password?</a> -->
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <input type="submit" value="登录">
+                </form>
+                <h4>Continue With</h4>
+                <div class="social_icons agileinfo">
+                    <section class="social">
+                        <a href="" class="icon fb"><img src="/static/images/f.png" alt=""/></a>
+                        <a href="" class="icon tw"><img src="/static/images/t.png" alt=""/></a>
+                        <a href="" class="icon gp"><img src="/static/images/g.png" alt=""/></a>
+                    </section>
+                </div>
+                <h5>还没有账号? <a href="{% url 'register' %}">立即注册</a></h5>
+            </div>
+        </div>
+        <!-- <div class="agile-info_w3ls third hvr-buzz-out">
+            <h3>Account Reset</h3>
+            <div class="agile-info_w3ls_grid third">
+                <form action="#" method="post">
+                    <input type="password" name="Password" placeholder="New Password" required=" ">
+                    <input type="password" name="Password" placeholder="Confirm Password" required=" ">
+                    <p class="asd"><a href="#">Great passwords</a> use upper and lower case
+                        characters, numbers and symbols like "!@#$*.</p>
+                    <input type="reset" value="Reset Password">
+                    <input type="submit" value="Send">
+                </form>
+                <h5 class="rest">Already a member? <a href="#">Sign In</a></h5>
+            </div>
+        </div> -->
+        <div class="clear"></div>
+    </div>
+    <!-- <div class="agileits_copyright">
+        <p>© 2016 Collective Forms Widget. All rights reserved | Design by <a href="http://www.xmoban.cn">xmoban.cn</a></p>
+    </div> -->
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<style type="text/css">
+    #navigation_id {
+        background: red;
+    }
+
+    #navigation_id > li {
+        float: left;
+        padding: 10px;
+    }
+
+    #navigation_id a {
+        color: white;
+        font-size: 20px;
+        font-weight: inherit;
+    }
+
+    #navigation_id span {
+        color: white;
+        font-size: 22px;
+        font-weight: inherit;
+    }
+</style>
+<ul class="clear" id="navigation_id">
+    <li><span>商品分类</span></li>
+    {% for navi in  nav_list %}
+        <li><a href="#">{{ navi.nav_name }} </a></li>
+    {% endfor %}
+</ul>
